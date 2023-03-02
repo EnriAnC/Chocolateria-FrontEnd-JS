@@ -1,6 +1,23 @@
 <div class="seccion" id="productos" display>
     <div class="seccion-block">
         <h2>Productos</h2>
+        <div>
+            <form id="form-add-product" style="display: flex;">
+                <div style="display: flex; flex-direction:column; width: 50%;">
+                    <label for="img">Foto del producto</label>
+                    <input type="file" name="img" accept="image/png, image/jpeg" id="img_product" required>
+                </div>
+                <div style="display: flex; flex-direction:column; width: 50%;">
+                    <label for="nombe">Nombre</label>
+                    <input type="text" name="nombre" required>
+                    <label for="precio">Precio</label>
+                    <input type="number" name="precio" required>
+                    <label for="existencias">Stock</label >
+                    <input type="number" name="existencias" required><br>
+                    <button type="submit">Añadir producto</button>
+                </div>
+            </form>
+        </div>
         <table>
             <thead>
                 <tr>

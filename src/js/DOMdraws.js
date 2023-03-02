@@ -128,7 +128,7 @@ function drawCards(data){
             template.querySelector('.card-title').innerText = producto.nombre
             template.querySelector('.precio-antes').innerText = `$${producto.precio + producto.precio*0.2} `
             template.querySelector('.precio-actual').innerText = `$${producto.precio} `
-            template.querySelector('.bg-url').style.backgroundImage = `url(./src/img/${producto.img})`
+            template.querySelector('.bg-url').style.backgroundImage = `url(${producto.img})`
             template.querySelector('.btn-agregar').dataset.id = producto.id_producto
             template.querySelector('.btn-agregar').dataset.nombre = producto.nombre
             template.querySelector('.btn-agregar').dataset.precio = producto.precio

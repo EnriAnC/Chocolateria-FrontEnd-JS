@@ -1,3 +1,5 @@
+// const NAME = 'chocolateria-backend-node-production.up.railway.app',
+//     DOMAIN = `https://${NAME}`,
 const NAME = 'localhost',
     PORT = 3000,
     DOMAIN = `http://${NAME}:${PORT}`,
@@ -13,8 +15,10 @@ const NAME = 'localhost',
     ADDRRESSBYRUT = `${API}/direcciones/rut`,
     DISPATCHBYORDER = `${API}/despachos/orden`,
     SENDORDER = `${API}/compra/orden`,
+    ADDPRODUCT = `${API}/producto`,
     LOGIN = `${SITE}/login`,
-    CLIENT = `${API}/usuario/cliente`
+    CLIENT = `${API}/usuario/cliente`,
+    USER = `${API}/usuario`
     
 export default { DOMAIN, 
     SITE,
@@ -31,4 +35,6 @@ export default { DOMAIN,
     SENDORDER,
     LOGIN,
     CLIENT,
+    USER,
+    ADDPRODUCT
 }

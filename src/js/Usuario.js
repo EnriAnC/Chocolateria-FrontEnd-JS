@@ -2,9 +2,10 @@ import { ajax } from "./helpers/ajax.js"
 import my_api from "./helpers/my_api.js"
 
 class Usuario{
-    constructor(rut="", nombre="", direcciones=[]){
+    constructor(rut="", nombre="", email="", direcciones=[]){
         this.rut = rut
         this.nombre = nombre
+        this.email = email
         this.direcciones = direcciones
         this.direccionElegida = direcciones[0]
     }
@@ -39,8 +40,14 @@ class Usuario{
                     "authorization": `Bearer ${token}`
                 })
             }});
+            let usuario = await ajax({url:my_api.USER, options:{
+                headers: new Headers({
+                    "authorization": `Bearer ${token}`
+                })
+            }});
             this.rut = cliente.rut;
             this.nombre = cliente.nombre
+            this.email = usuario.email
             await this.fetchDirecciones()
             return {rut:this.rut, nombre:this.nombre, active:true}
         } catch (error) {

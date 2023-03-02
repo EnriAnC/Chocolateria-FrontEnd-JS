@@ -28,17 +28,6 @@ d.addEventListener('DOMContentLoaded', async e=>{
         drawDirecciones(usuario.direcciones)
     }
 
-    if (thisLocation == ''){
-        await initMenuPrincipal()
-    }
-    else if (thisLocation == '#usuario'){
-        await initUsuario()
-    }
-    else if (thisLocation == '#administracion'){
-        await initAdministracion()
-    }
-
-
     if(!thisSesion){
         panelUsuario(false)
         panelAdministracion(false)
@@ -54,6 +43,19 @@ d.addEventListener('DOMContentLoaded', async e=>{
         panelAdministracion(false)
         mostrarInicioSesion(false)
     } 
+
+    if (thisLocation == ''){
+        await initMenuPrincipal()
+    }
+    else if (thisLocation == '#usuario'){
+        await initUsuario()
+    }
+    else if (thisLocation == '#administracion'){
+        await initAdministracion()
+    }
+
+
+    
 
     expandAsideAnimation()
     goToHrefHTML()

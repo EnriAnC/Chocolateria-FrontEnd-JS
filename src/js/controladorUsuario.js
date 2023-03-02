@@ -56,7 +56,7 @@ async function drawInfoUsuario(){
                 ${usuario.direcciones.map(el=>`<option>${el.direccion}</option>`)}
             </select>
         `;
-        d.querySelector('.correo-info').innerText = 'nuevo@nuevo.cl';
+        d.querySelector('.correo-info').innerText = usuario.email;
     } catch (error) {
         console.log(error)
     }

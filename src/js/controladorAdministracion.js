@@ -33,6 +33,13 @@ d.addEventListener('submit', async e=>{
             console.log(data)
             drawProductoPorId(data)
         }
+        if (e.target.id == "form-add-product"){
+            const data = await subirProducto(e)
+            console.log(data)
+            let text = `${data.id_producto}----${data.nombre}----${data.precio}----${data.existencias}----${data.img}`
+            alert('Producto subido!\r'+text)
+            e.submitter.setAttribute('disabled', "false")
+        }
     }    
 })
 
@@ -60,6 +67,22 @@ async function getAllDataPorRut(e){
         // alert(error.message)
         console.log('Error en get.js: ',error)
     }
+}
+
+async function subirProducto(e){
+    try {
+        const data = new FormData(e.target);
+        e.submitter.setAttribute('disabled', "true")
+        const res = await ajax({url:my_api.ADDPRODUCT, options:{
+            method:"POST",
+            body: data
+        }})
+        console.log(res)
+        return res
+    } catch (error) {
+        console.log(error)
+    }
+    
 }
 
 export {ControladorAdministracion}
