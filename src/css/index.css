@@ -1,0 +1,291 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;700&family=Julee&family=Lexend:wght@300;400;700&family=Yantramanav:wght@300;400;500&display=swap");
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100vh;
+  background-color: #fcfcfc;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+}
+
+h2, h3, p, tr, th, span, button, h4, h5 {
+  font-family: "Lexend", sans-serif;
+  color: rgb(45, 45, 45);
+}
+
+.container {
+  width: 100%;
+  display: grid;
+  grid-template: "aside main" 4.5rem "aside main"/20vw 80vw;
+  overflow-x: hidden;
+}
+
+a p {
+  cursor: default;
+}
+
+.aside {
+  grid-area: aside;
+  min-width: 180px;
+  width: 20vw;
+  background-color: #0b0b0b;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  z-index: 20;
+  color: white;
+  padding: 3vh 2vw 3vh;
+}
+.aside a, .aside p, .aside select, .aside option {
+  font-family: Calibri;
+}
+.aside #expand-arrow {
+  display: none;
+  height: 60px;
+  width: 48px;
+  cursor: pointer;
+  position: absolute;
+  top: 45vh;
+  background-color: inherit;
+  border-radius: 50%;
+  right: -18px;
+}
+.aside #expand-arrow svg {
+  padding-top: 10px;
+  padding-left: 15px;
+}
+.aside .menu {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5rem;
+}
+.aside .menu a {
+  text-decoration: none;
+}
+.aside .menu p, .aside .menu button, .aside .menu .btn-cambiar, .aside .menu #active-sesion {
+  font-weight: 400;
+  color: #adadad;
+  transition: background-color 0.25s;
+}
+.aside .menu p:hover, .aside .menu button:hover, .aside .menu .btn-cambiar:hover, .aside .menu #active-sesion:hover {
+  color: rgb(239, 238, 238);
+  background-color: rgba(255, 255, 255, 0.142);
+}
+.aside .menu #active-sesion {
+  border: none;
+  box-shadow: none;
+  position: absolute;
+  bottom: 10vh;
+  right: 0;
+  left: 0;
+  text-align: center;
+  background-color: rgb(11, 11, 11);
+}
+.aside .menu li p {
+  font-weight: 300;
+  color: rgb(111, 111, 111);
+}
+.aside .menu > p {
+  cursor: default;
+}
+.aside .menu .div-form-sesion {
+  position: absolute;
+  bottom: calc(10vh + 2.5rem);
+  right: 0;
+  left: 0;
+  background-color: #2a2a2a;
+  padding: 0.5rem 0;
+}
+.aside .menu .div-form-sesion #form-inicio-sesion {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.aside .menu .div-form-sesion #form-inicio-sesion label {
+  font-family: Calibri;
+}
+.aside .menu .div-form-sesion #form-inicio-sesion input {
+  margin-bottom: 0.5rem;
+  border-radius: 20px;
+  width: 150px;
+}
+.aside .menu .direcciones-usuario {
+  margin-top: 2.5vh;
+  display: flex;
+  flex-direction: column;
+}
+.aside .menu .direcciones-usuario span {
+  font-family: Calibri;
+  color: #5b5b5b;
+}
+.aside .menu .direcciones-usuario span:nth-child(2) {
+  color: rgb(136, 136, 136);
+}
+.aside .menu .direcciones-usuario .btn-cambiar {
+  position: relative;
+  bottom: -0.5rem;
+  font-size: 0.8rem;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.aside .menu .direcciones-usuario select {
+  font-size: 1rem;
+  padding: 0 !important;
+  border: none;
+  border-radius: 5px;
+  color: rgb(189, 189, 189);
+  background-color: #0b0b0b;
+}
+.aside .menu .direcciones-usuario select option {
+  border: none;
+  color: rgb(196, 196, 196);
+}
+.aside .menu .direcciones-usuario select:focus {
+  border: none;
+}
+.aside .user {
+  align-self: center;
+}
+
+.main {
+  overflow-x: hidden;
+  position: relative;
+  width: 80vw;
+  padding: 0rem 3vw;
+  grid-area: main;
+  width: 80vw;
+}
+
+button {
+  padding: 0.25rem 0.5rem;
+  background-color: rgb(248, 248, 248);
+  border-radius: 5px;
+  transition: box-shadow 0.5s;
+  border-width: 1px;
+}
+
+button:hover {
+  box-shadow: 0px 0px 4px 1px black;
+}
+
+button:active {
+  transition-duration: 0.1s;
+  box-shadow: none;
+}
+
+label {
+  font-family: Calibri;
+}
+
+input {
+  padding: 0.25rem 0.5rem;
+  background-color: rgb(248, 248, 248);
+  border-radius: 5px;
+  border-width: 1px;
+}
+
+.display-none {
+  display: none !important;
+}
+
+table {
+  padding: 0.5rem;
+  border-collapse: none;
+  width: 100%;
+  font-size: 0.85rem;
+}
+table th, table td {
+  text-align: center;
+  width: 80px;
+  vertical-align: center;
+  padding: 0.25rem 0.25rem;
+  font-family: Calibri;
+}
+table tr:nth-child(2n-1) {
+  background-color: #f0f0f0;
+}
+
+.table-clientes p {
+  padding: 0.25rem 0;
+}
+
+.table-clientes {
+  font-size: 0.75rem;
+}
+
+select {
+  font-size: 0.95rem;
+  font-family: "Lexend", sans-serif;
+  border: none;
+}
+
+.box-change-page {
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  background-color: #0b0b0b;
+  z-index: 19;
+  left: -100vw;
+}
+
+.box-change-page.changing {
+  animation: changing 0.75s forwards ease-out;
+}
+
+@keyframes changing {
+  to {
+    left: 20vw;
+  }
+}
+.box-change-page.next {
+  animation: nextpage 1s forwards ease-out;
+}
+
+@keyframes nextpage {
+  from {
+    left: 20vw;
+  }
+  to {
+    left: 100vw;
+  }
+}
+.box-change-page.previous {
+  animation: prevpage 1s forwards;
+}
+
+@keyframes prevpage {
+  to {
+    left: -100vw;
+  }
+}
+@media (max-width: 768px) {
+  .container {
+    grid-template: "main main" 4.5rem "main main"/20vw 80vw;
+  }
+  .aside {
+    left: -170px;
+  }
+  .aside #expand-arrow {
+    display: block;
+  }
+}
+@media (min-width: 768px) {
+  .aside {
+    left: 0;
+  }
+  .aside #expand-arrow {
+    display: none;
+  }
+}
+
+/*# sourceMappingURL=index.css.map */

@@ -1,0 +1,64 @@
+
+<div class="carrito" id="carrito">
+    <p class="carrito-cantidad">0</p>
+    <svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 96 960 960" width="48"><path d="M286.788 975Q257 975 236 953.788q-21-21.213-21-51Q215 873 236.212 852q21.213-21 51-21Q317 831 338 852.212q21 21.213 21 51Q359 933 337.788 954q-21.213 21-51 21Zm400 0Q657 975 636 953.788q-21-21.213-21-51Q615 873 636.212 852q21.213-21 51-21Q717 831 738 852.212q21 21.213 21 51Q759 933 737.788 954q-21.213 21-51 21ZM235 315l110 228h288l125-228H235Zm-30-60h589.074q22.964 0 34.945 21Q841 297 829 318L694 561q-11 19-28.559 30.5Q647.881 603 627 603H324l-56 104h491v60H277q-42 0-60.5-28t.5-63l64-118-152-322H51v-60h117l37 79Zm140 288h288-288Z"/></svg>
+</div>
+<div class="carrito-compras display-none">    
+    <div class="carrito-compras-top">
+        <span id="total-parcial-compra">Mi carrito </span>
+        <button id="btn-realizar-compra">Crear Orden</button>
+    </div>
+</div>
+<header class="header">
+    <h1 style="cursor: pointer  ;">Chocolateria!</h1>
+</header>
+
+
+<div class="seccion" id="inicio">
+    <div class="seccion-block">
+        <h2>Bienvenido a este lugar</h2>
+        <div>
+            <h3>Tenemos lo siguiente</h3>
+            <div class="productos" id="vista-productos">
+                <template id="card">
+                    <div class="card bg-url" style="background-image: url(./src/img/brownie_almendras.jpg);">
+                        <div class="card-content expand">
+                            <h3 class="card-title">Brownie con almendras y ciruelas</h3>
+                            <p class="card-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui rerum ea facilis.</p>
+                            <div class="card-precio">
+                                <!-- <span>Precio:</span> -->
+                                <span class="precio-antes">$20</span><span>Antes</span>
+                                <span class="precio-actual">$15</span><span>Ahora!</span>
+                            </div>
+                            <div class="card-input">
+                                <!-- <span>+</span>
+                                <input type="number" name="cantidad" id="cant_prod">
+                                <span>-</span> -->
+                                <button class="btn-agregar">Agregar al carro</button>
+                            </div>
+                            <p class="card-expandir">+Info</p>
+                        </div>
+                    </div>
+                </template>
+
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+
+<template id="template-item">
+    <div class="item">
+    
+        <p>
+            <span class="nombre-item"></span><br>
+            <span class="precio-item"></span> -
+            <span>Cantidad: <span class="cantidad-item"></span></span>
+        </p>
+        
+        <svg class="delete-svg close" xmlns="http://www.w3.org/2000/svg" height="24" width="24">
+            <use class="delete-svg" xlink:href="#delete-svg">
+        </svg>
+    </div>
+</template>

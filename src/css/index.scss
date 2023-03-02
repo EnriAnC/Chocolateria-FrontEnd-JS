@@ -1,0 +1,312 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;700&family=Julee&family=Lexend:wght@300;400;700&family=Yantramanav:wght@300;400;500&display=swap');
+
+$aside-color: #0b0b0b;
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    min-height: 100vh;
+    background-color: #fcfcfc;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+}
+
+body{
+    min-height: 100vh;
+
+}
+
+h2, h3, p, tr, th, span, button, h4, h5{
+    font-family: 'Lexend', sans-serif;
+    color: rgb(45, 45, 45);
+}
+
+.container{
+    // scroll-behavior: smooth;
+    // height: 100vh;
+    width: 100%;
+    display: grid;
+    grid-template:  "aside main" 4.5rem
+                    "aside main" /
+                    20vw 80vw;
+
+    overflow-x: hidden;
+}
+
+a{
+    p{
+        cursor: default;
+    }
+}
+
+.aside{
+    grid-area: aside;
+    min-width: 180px;
+    width: 20vw;
+    background-color: $aside-color;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    z-index: 20;
+    color: white;
+    padding: 3vh 2vw 3vh ;
+    a, p, select, option{
+        font-family: Calibri;
+    }
+    #expand-arrow{
+        display: none;
+        height: 60px;
+        width: 48px;
+        cursor: pointer;
+        position: absolute;
+        top: 45vh;
+        background-color: inherit;
+        border-radius: 50%;
+        right: -18px;
+        svg{
+            padding-top: 10px;
+            padding-left: 15px;
+            // margin-right: -10px;
+        }
+    }
+    .menu{
+
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        row-gap: .5rem;
+        a{
+            text-decoration: none;
+        }
+        p, button, .btn-cambiar, #active-sesion{    
+            font-weight: 400; 
+            color: #adadad;
+            // padding: .15rem .25rem;
+            transition: background-color .25s;
+            &:hover{
+                color: rgb(239, 238, 238);
+                background-color: rgba(255, 255, 255, 0.142);
+            }
+        }
+        #active-sesion{
+            border  : none;
+            box-shadow: none;
+            position: absolute;
+            bottom: 10vh;
+            right: 0;
+            left: 0 ;
+            text-align: center;
+            background-color: rgb(11, 11, 11);;
+        }
+        li p{
+            font-weight: 300;
+            color: rgb(111, 111, 111);
+        }
+        > p{
+            cursor:default;
+        }
+        .div-form-sesion{
+            position: absolute;
+            bottom: calc(10vh + 2.5rem);
+            right: 0;
+            left: 0;
+            background-color: #2a2a2a;
+            padding: .5rem 0;
+            #form-inicio-sesion{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                label{
+                    font-family: Calibri;
+                }
+                input{
+                    margin-bottom: .5rem;
+                    border-radius: 20px;
+                    width: 150px;
+                }
+            }
+        }
+        .direcciones-usuario{
+            margin-top: 2.5vh;
+            display: flex;
+            flex-direction: column;
+            
+            span{
+                font-family: Calibri;
+                color: #5b5b5b;
+            }
+            span:nth-child(2){
+                color: rgb(136, 136, 136);
+            }
+            .btn-cambiar{
+                position: relative;
+                bottom: -.5rem;
+                font-size: .8rem;
+                text-decoration: underline;
+                cursor: pointer;
+            }
+            select{
+                font-size: 1rem;
+                padding: 0 !important;
+                border: none;
+                border-radius: 5px;
+                color: rgb(189, 189, 189);
+                background-color: $aside-color;
+                option{
+                    border: none;
+                    color: rgb(196, 196, 196);
+                }
+                &:focus{
+                    border: none;
+                }
+            }
+        }
+    }
+    
+    .user{
+        align-self: center;
+    }
+ 
+}
+
+
+.main{ 
+    overflow-x: hidden;
+    // overflow-y: scroll;
+    // scroll-behavior: smooth;
+    position: relative;
+    // height: calc(100vh - 4.5rem);
+    width: 80vw;
+    padding: 0rem 3vw;
+    grid-area: main;
+    // height: 100vh;
+    width: 80vw;
+}
+
+button{
+    padding: .25rem .5rem;
+    background-color: rgb(248, 248, 248);
+    border-radius: 5px;
+    transition: box-shadow .5s;
+    border-width: 1px;
+}
+button:hover{
+    box-shadow: 0px 0px 4px 1px black;
+}
+button:active{
+    transition-duration: .1s;
+    box-shadow: none;
+}
+label{
+    font-family: Calibri;
+}
+input{
+    padding: .25rem .5rem;
+    background-color: rgb(248, 248, 248);
+    border-radius: 5px;
+    border-width: 1px;
+}
+
+// DISPLAY NONE 
+.display-none{
+    display: none !important;
+}
+
+
+table{
+    padding: .5rem;
+    border-collapse: none;
+    // border: 1px solid;
+    width: 100%;
+    font-size: .85rem;
+    th,td{
+        text-align: center;
+        width: 80px;
+        vertical-align: center;
+        padding: .25rem .25rem;
+        font-family: Calibri;
+    }
+    tr:nth-child(2n-1){
+        background-color: #f0f0f0;
+    }
+}
+.table-clientes p{
+    padding: .25rem 0;
+}
+.table-clientes{
+    font-size: .75rem;
+}
+
+select{
+    // padding: .25rem .5rem;  
+    font-size: .95rem;
+    font-family: "Lexend", sans-serif;
+    border: none;
+}
+
+.box-change-page{
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    background-color: $aside-color;
+    z-index: 19;
+    left: -100vw;
+}
+
+.box-change-page.changing{
+    animation: changing .75s forwards ease-out;
+}
+@keyframes changing {
+    to{
+        left: 20vw;
+    }
+}
+
+.box-change-page.next{
+    animation: nextpage 1s forwards ease-out;
+}
+@keyframes nextpage {
+    from{
+        left: 20vw;
+    }
+    to{
+        left: 100vw;
+    }
+}
+
+.box-change-page.previous{
+    animation: prevpage 1s forwards;
+}
+@keyframes prevpage {
+    to{
+        left: -100vw;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .container{
+        grid-template:  "main main" 4.5rem
+                        "main main" /
+                        20vw 80vw;
+    }
+    .aside{
+        left: -170px;
+        #expand-arrow{
+            display: block;
+        }
+    }   
+};
+
+@media (min-width: 768px) {
+    .aside{
+        left: 0;
+        #expand-arrow{
+            display: none;
+        }
+    }   
+};

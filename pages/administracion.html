@@ -1,0 +1,99 @@
+<div class="seccion" id="productos" display>
+    <div class="seccion-block">
+        <h2>Productos</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nombre</th>
+                    <th>Precio</th>
+                    <th>Stock</th>
+                </tr>
+            </thead>
+            <tbody id="tbody-productos">
+
+            </tbody>
+        </table>
+        <h3>Buscar producto por id</h3>
+        <form id="form-obtener-producto">
+            <label for="idproducto">Id:</label>
+            <input type="text" name="idproducto">
+            <button type="submit">Buscar</button>
+        </form>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nombre</th>
+                    <th>Precio</th>
+                    <th>Stock</th>
+                </tr>
+            </thead>
+            <tbody id="tbody-producto-id">
+
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="seccion" id="clientes" display>
+    <div class="seccion-block">
+        <h2>Clientes</h2>
+        <form id="form-allDataPorRut">
+            <label for="rut">Ingrese rut de cliente</label><br>
+            <input type="text" name="rut" id="rutclient">
+            <button type="submit">Buscar</button>
+        </form>
+        <table class="table-clientes">
+            <thead>
+                <tr>
+                    <th>Rut</th>
+                    <th>Nombre</th>
+                    <th>Acción</th>
+                </tr>
+            </thead>
+            <tbody id="tbody-clientes">
+                
+            </tbody>
+        </table>
+        <table class="table-clientes-ordenes">
+            <thead>
+                <tr>
+                    <th>Rut</th>
+                    <th>Direccion</th>
+                    <th>Orden</th>
+                    <th>Productos</th>
+                </tr>
+            </thead>
+            <tbody id="tbody-clientes-ordenes">
+                
+            </tbody>
+        </table>
+    </div>
+    
+</div>
+<div class="seccion" id="ordenes" display>
+    <div class="seccion-block">
+        <h2>Ordenes</h2>
+        <form id="form-ordenesPorRut">
+            <label for="rut">Ingrese rut de cliente</label><br>
+            <input type="text" name="rut" id="rutorder" required placeholder="1234567890">
+            <button type="submit">Buscar</button>
+        </form>
+        <table>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Rut</th>
+                    <th>Dirección</th>
+                    <th>Precio Total</th>
+                    <th>Acción</th>
+                </tr>
+            </thead>
+            <tbody id="tbody-ordenes">
+
+            </tbody>
+        </table>
+    </div>
+    
+</div>

@@ -1,0 +1,65 @@
+h2{
+    color: rebeccapurple;
+    margin-bottom: .5rem;
+}
+
+.img-usuario{
+    height: 250px;
+    width: 260px;
+    background-color: black;
+}
+
+.usuario-seccion{
+    min-height: inherit;
+    padding: 2.5vh 3.5vw 2.5vh 1vw;
+    width: 100%;
+}
+
+.usuario-block{
+    min-height: inherit;
+    width: inherit;
+}
+
+.flex-row{
+    display: flex;
+    width: inherit  ;
+}
+
+.detalles-usuario{
+    padding: .5rem 1rem;
+    width: inherit;
+}
+
+.info-general p:nth-child(2n-1){
+    display: flex;
+    justify-content: space-between;
+}
+.info-general p:nth-child(2n){
+    margin-bottom: .75rem;
+}
+
+/* Botones para modificar info usuario */
+.info-general p span:nth-child(2){
+    font-size: .75rem;
+    cursor: default;
+    display: flex;
+    flex-direction: column;
+}
+.info-general p span:nth-child(2) button{
+    border: none;
+    font-size: .75rem;
+    padding: 0;
+    background-color: none;
+    box-shadow: none;
+}
+.info-general p span:nth-child(2) button:hover{
+    color: rgb(122, 122, 122);
+}
+.info-general p span:nth-child(2):hover{
+    color: rgb(122, 122, 122);
+}
+
+.nombre-info input{
+    position: relative;
+    top: -.5rem;
+}
