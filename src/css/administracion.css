@@ -1,3 +1,22 @@
 .main .seccion-block{
     padding: 2vh 2vw !important;
 }
+.seccion{
+    background-color: #f5f5f5;
+    margin-bottom: .5rem;
+}
+
+#tbody-productos td{
+    position: relative;
+}
+#tbody-productos svg{
+    position: absolute;
+    top: .25rem;
+}
+
+#tbody-producto-id svg:hover{
+    fill:aquamarine
+}
+#tbody-producto-id svg:active{
+    fill:rgb(241, 220, 85)
+}   

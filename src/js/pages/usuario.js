@@ -1,4 +1,4 @@
-import { usuario } from "./index.js";
+import { thisSesion, usuario } from "../index.js";
 
 const d = document;
 
@@ -15,6 +15,7 @@ d.addEventListener('submit', async e=>{
 })
 
 async function updateInfoUsuario(e){
+    // await usuario.fetch(thisSesion)
     if (e.target.matches('#cambiar-nombre')){
         const $nombre = d.querySelector('.nombre-info')
         if (e.target.innerText == 'Cambiar') {
@@ -85,4 +86,4 @@ async function actualizarCliente(){
         }
 }
 
-export { ControladorUsuario }
+export default ControladorUsuario

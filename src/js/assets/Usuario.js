@@ -1,5 +1,5 @@
-import { ajax } from "./helpers/ajax.js"
-import my_api from "./helpers/my_api.js"
+import { ajax } from "../helpers/ajax.js"
+import my_api from "../helpers/my_api.js"
 
 class Usuario{
     constructor(rut="", nombre="", email="", direcciones=[]){
@@ -26,8 +26,12 @@ class Usuario{
         this.direccionElegida = direccion
     }
 
-    async fetchDirecciones(){
-        const direcciones = await ajax({url:my_api.ADDRRESSBYRUT+'/'+this.rut})
+    async fetchDirecciones(token){
+        const direcciones = await ajax({url:my_api.ADDRRESSBYRUT+'/'+this.rut,  options:{
+                headers: new Headers({
+                    "authorization": `Bearer ${token}`
+                })
+            }})
         this.direcciones = direcciones
         this.direccionElegida = direcciones[0]
         return this.direcciones
@@ -35,12 +39,14 @@ class Usuario{
 
     async fetch(token){
         try {
-            let cliente = await ajax({url:my_api.CLIENT, options:{
+            let usuario = await ajax({url:my_api.USER, options:{
                 headers: new Headers({
                     "authorization": `Bearer ${token}`
                 })
             }});
-            let usuario = await ajax({url:my_api.USER, options:{
+            console.log(usuario)
+            if (!usuario) return null
+            let cliente = await ajax({url:my_api.CLIENT, options:{
                 headers: new Headers({
                     "authorization": `Bearer ${token}`
                 })
@@ -48,10 +54,11 @@ class Usuario{
             this.rut = cliente.rut;
             this.nombre = cliente.nombre
             this.email = usuario.email
-            await this.fetchDirecciones()
+            await this.fetchDirecciones(token)
             return {rut:this.rut, nombre:this.nombre, active:true}
         } catch (error) {
             console.log(error)
+            console.warn('Se expiró su sesión, vuelva a iniciar sesión.')
         }
         
     }

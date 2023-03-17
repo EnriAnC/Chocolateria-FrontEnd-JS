@@ -7,36 +7,99 @@
     <title>Chocolateria!</title>
     <link rel="stylesheet" href="./src/css/index.css">
     <link rel="stylesheet" href="./src/css/main.css" id="dinamyc-link">
-    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
-        <symbol id="delete-svg">
-            <path fill-rule="evenodd" d="M5.72 5.72a.75.75 0 011.06 0L12 10.94l5.22-5.22a.75.75 0 111.06 1.06L13.06 12l5.22 5.22a.75.75 0 11-1.06 1.06L12 13.06l-5.22 5.22a.75.75 0 01-1.06-1.06L10.94 12 5.72 6.78a.75.75 0 010-1.06z"/>
+    <svg fill="none" xmlns="http://www.w3.org/2000/svg" style="display: none;">
+        <symbol id="edit-svg">
+            <path d="M13.26 3.59997L5.04997 12.29C4.73997 12.62 4.43997 13.27 4.37997 13.72L4.00997 16.96C3.87997 18.13 4.71997 18.93 5.87997 18.73L9.09997 18.18C9.54997 18.1 10.18 17.77 10.49 17.43L18.7 8.73997C20.12 7.23997 20.76 5.52997 18.55 3.43997C16.35 1.36997 14.68 2.09997 13.26 3.59997Z" stroke="#292D32" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M11.89 5.05005C12.32 7.81005 14.56 9.92005 17.34 10.2" stroke="#292D32" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M3 22H21" stroke="#292D32" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+        </symbol>
+    </svg>
+    <svg width="105" height="105" viewBox="0 0 105 105" xmlns="http://www.w3.org/2000/svg" fill="#fff" style="display: none;">
+        <symbol id="loading-svg">
+                <circle cx="12.5" cy="12.5" r="12.5">
+                    <animate attributeName="fill-opacity"
+                     begin="0s" dur="1s"
+                     values="1;.2;1" calcMode="linear"
+                     repeatCount="indefinite" />
+                </circle>
+                <circle cx="12.5" cy="52.5" r="12.5" fill-opacity=".5">
+                    <animate attributeName="fill-opacity"
+                     begin="100ms" dur="1s"
+                     values="1;.2;1" calcMode="linear"
+                     repeatCount="indefinite" />
+                </circle>
+                <circle cx="52.5" cy="12.5" r="12.5">
+                    <animate attributeName="fill-opacity"
+                     begin="300ms" dur="1s"
+                     values="1;.2;1" calcMode="linear"
+                     repeatCount="indefinite" />
+                </circle>
+                <circle cx="52.5" cy="52.5" r="12.5">
+                    <animate attributeName="fill-opacity"
+                     begin="600ms" dur="1s"
+                     values="1;.2;1" calcMode="linear"
+                     repeatCount="indefinite" />
+                </circle>
+                <circle cx="92.5" cy="12.5" r="12.5">
+                    <animate attributeName="fill-opacity"
+                     begin="800ms" dur="1s"
+                     values="1;.2;1" calcMode="linear"
+                     repeatCount="indefinite" />
+                </circle>
+                <circle cx="92.5" cy="52.5" r="12.5">
+                    <animate attributeName="fill-opacity"
+                     begin="400ms" dur="1s"
+                     values="1;.2;1" calcMode="linear"
+                     repeatCount="indefinite" />
+                </circle>
+                <circle cx="12.5" cy="92.5" r="12.5">
+                    <animate attributeName="fill-opacity"
+                     begin="700ms" dur="1s"
+                     values="1;.2;1" calcMode="linear"
+                     repeatCount="indefinite" />
+                </circle>
+                <circle cx="52.5" cy="92.5" r="12.5">
+                    <animate attributeName="fill-opacity"
+                     begin="500ms" dur="1s"
+                     values="1;.2;1" calcMode="linear"
+                     repeatCount="indefinite" />
+                </circle>
+                <circle cx="92.5" cy="92.5" r="12.5">
+                    <animate attributeName="fill-opacity"
+                     begin="200ms" dur="1s"
+                     values="1;.2;1" calcMode="linear"
+                     repeatCount="indefinite" />
+                </circle>           
+        </symbol>
+    </svg>
+    <svg viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" style="display: none;">
+        <symbol id="confirm-svg">
+            <path d="m16 0c8.836556 0 16 7.163444 16 16s-7.163444 16-16 16-16-7.163444-16-16 7.163444-16 16-16zm6.4350288 11.7071068c-.3905242-.3905243-1.0236892-.3905243-1.4142135 0l-6.3646682 6.3632539-3.5348268-3.5348268c-.3905242-.3905243-1.0236892-.3905243-1.41421352 0-.39052429.3905243-.39052429 1.0236893 0 1.4142136l4.24264072 4.2426407c.3905243.3905242 1.0236892.3905242 1.4142135 0 .0040531-.0040531.0080641-.0081323.012033-.0122371l7.0590348-7.0588308c.3905243-.3905242.3905243-1.0236892 0-1.4142135z" >
         </symbol>
     </svg>
 </head>
 <body>
     <div class="container">
-        <div class="box-change-page">
-
-        </div>
+        <div class="box-change-page"></div>
         <aside class="aside">
             <div class="menu">
                 <div class="user">
                     <svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 96 960 960" width="48"><path fill="#fff" d="M222 801q63-44 125-67.5T480 710q71 0 133.5 23.5T739 801q44-54 62.5-109T820 576q0-145-97.5-242.5T480 236q-145 0-242.5 97.5T140 576q0 61 19 116t63 109Zm257.814-195Q422 606 382.5 566.314q-39.5-39.686-39.5-97.5t39.686-97.314q39.686-39.5 97.5-39.5t97.314 39.686q39.5 39.686 39.5 97.5T577.314 566.5q-39.686 39.5-97.5 39.5Zm.654 370Q398 976 325 944.5q-73-31.5-127.5-86t-86-127.266Q80 658.468 80 575.734T111.5 420.5q31.5-72.5 86-127t127.266-86q72.766-31.5 155.5-31.5T635.5 207.5q72.5 31.5 127 86t86 127.032q31.5 72.532 31.5 155T848.5 731q-31.5 73-86 127.5t-127.032 86q-72.532 31.5-155 31.5ZM480 916q55 0 107.5-16T691 844q-51-36-104-55t-107-19q-54 0-107 19t-104 55q51 40 103.5 56T480 916Zm0-370q34 0 55.5-21.5T557 469q0-34-21.5-55.5T480 392q-34 0-55.5 21.5T403 469q0 34 21.5 55.5T480 546Zm0-77Zm0 374Z"/></svg>
                 </div>
-                <a id="inicio-hyperlink" hrefHTML = '../../pages/main.html'><p>Menu principal</p></a>
-                <p display hrefHTML = '../../pages/administracion.html'>Panel de administración</p>
-                <ul display>
+                <a id="inicio-hyperlink"><p srchtml='./pages/main.html'>Menu principal</p></a>
+                <p class="display-none" display srchtml='./pages/administracion.html'>Panel de administración</p>
+                <ul display class="display-none">
                     <li><a href="#productos"><p>Productos</p></a></li>
                     <li><a href="#clientes"><p>Clientes</p></a></li>
                     <li><a href="#ordenes"><p>Ordenes</p></a></li>
                 </ul>
-                <a hrefHTML = '../../pages/usuario.html' display-user><p>Administrar cuenta</p></a>
-                <div display-user class="direcciones-usuario">
+                <a class="display-none" display-user><p srchtml='./pages/usuario.html'>Administrar cuenta</p></a>
+                <div display-user class="direcciones-usuario display-none">
                     <span>Su dirección actual: </span><span id="dir-actual">...</span>
                     <span class="btn-cambiar">Cambiar</span>
                 </div>
 
-                <div class="div-form-sesion" id="div-form-sesion">
+                <div class="div-form-sesion display-none" id="div-form-sesion" display-sesion>
                     <form id="form-inicio-sesion">
                         <label for="usuario">Usuario: </label>
                         <input type="text" name="usuario" required placeholder="">
@@ -45,6 +108,7 @@
                     </form>
                 </div>
                 <button id="active-sesion" type="submit" form="form-inicio-sesion">Iniciar Sesión</button>
+                <button class="display-none" id="register" srchtml='./pages/registro.html' display-sesion>Registrarse</button>
             </div>
             <div id="expand-arrow">
                 <svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 96 960 960" width="48"><path fill="#fff" d="m304 974-56-57 343-343-343-343 56-57 400 400-400 400Z"/></svg>
@@ -56,6 +120,7 @@
             <!-- CONTENIDO INSERTADO CON JS -->
         </main>
     </div>
+
 
     <script type="module" src="./src/js/index.js"></script>
 </body>

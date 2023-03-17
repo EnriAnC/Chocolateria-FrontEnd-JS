@@ -1,6 +1,6 @@
-import { ajax } from "./helpers/ajax.js";
-import my_api from "./helpers/my_api.js";
-import { carroDeCompras, usuario, thisSesion } from "./index.js";
+import { ajax } from "../helpers/ajax.js";
+import my_api from "../helpers/my_api.js";
+import { carroDeCompras, usuario, thisSesion } from "../index.js";
 
 const d = document;
 // ----------CARRO DE COMPRAS ACCIONES CON EL DOM---------------

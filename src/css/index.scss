@@ -81,7 +81,7 @@ a{
         a{
             text-decoration: none;
         }
-        p, button, .btn-cambiar, #active-sesion{    
+        p, button, .btn-cambiar, #active-sesion, #register{    
             font-weight: 400; 
             color: #adadad;
             // padding: .15rem .25rem;
@@ -91,15 +91,19 @@ a{
                 background-color: rgba(255, 255, 255, 0.142);
             }
         }
-        #active-sesion{
+        #active-sesion, #register{
             border  : none;
             box-shadow: none;
             position: absolute;
-            bottom: 10vh;
+            bottom: 11%;
             right: 0;
             left: 0 ;
             text-align: center;
-            background-color: rgb(11, 11, 11);;
+            background-color: rgba(11, 11, 11, 0);
+        }
+        #register{
+            bottom: 7%;
+            font-size: .75rem;
         }
         li p{
             font-weight: 300;
@@ -127,6 +131,7 @@ a{
                     margin-bottom: .5rem;
                     border-radius: 20px;
                     width: 150px;
+                    padding: 0.15rem .25rem!important;
                 }
             }
         }
@@ -184,7 +189,6 @@ a{
     padding: 0rem 3vw;
     grid-area: main;
     // height: 100vh;
-    width: 80vw;
 }
 
 button{
@@ -234,6 +238,30 @@ table{
         background-color: #f0f0f0;
     }
 }
+
+.fullscreen{
+    .modal{
+        // padding: .5 .25rem;
+        // background-color: #4a4843;
+    }
+    // filter: blur(5px);
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.774);
+    z-index: 18;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .contact-form-response{
+        margin-bottom: -.5rem;
+    }
+}
+
 .table-clientes p{
     padding: .25rem 0;
 }
@@ -262,30 +290,25 @@ select{
 }
 @keyframes changing {
     to{
-        left: 20vw;
+        left: 0vw;
     }
 }
 
 .box-change-page.next{
     animation: nextpage 1s forwards ease-out;
 }
+
+
+
 @keyframes nextpage {
     from{
-        left: 20vw;
+        left: 0vw;
     }
     to{
         left: 100vw;
     }
 }
 
-.box-change-page.previous{
-    animation: prevpage 1s forwards;
-}
-@keyframes prevpage {
-    to{
-        left: -100vw;
-    }
-}
 
 
 @media (max-width: 768px) {
@@ -300,6 +323,9 @@ select{
             display: block;
         }
     }   
+    .main{
+        width: 100%
+    }
 };
 
 @media (min-width: 768px) {

@@ -71,24 +71,28 @@ a p {
 .aside .menu a {
   text-decoration: none;
 }
-.aside .menu p, .aside .menu button, .aside .menu .btn-cambiar, .aside .menu #active-sesion {
+.aside .menu p, .aside .menu button, .aside .menu .btn-cambiar, .aside .menu #active-sesion, .aside .menu #register {
   font-weight: 400;
   color: #adadad;
   transition: background-color 0.25s;
 }
-.aside .menu p:hover, .aside .menu button:hover, .aside .menu .btn-cambiar:hover, .aside .menu #active-sesion:hover {
+.aside .menu p:hover, .aside .menu button:hover, .aside .menu .btn-cambiar:hover, .aside .menu #active-sesion:hover, .aside .menu #register:hover {
   color: rgb(239, 238, 238);
   background-color: rgba(255, 255, 255, 0.142);
 }
-.aside .menu #active-sesion {
+.aside .menu #active-sesion, .aside .menu #register {
   border: none;
   box-shadow: none;
   position: absolute;
-  bottom: 10vh;
+  bottom: 11%;
   right: 0;
   left: 0;
   text-align: center;
-  background-color: rgb(11, 11, 11);
+  background-color: rgba(11, 11, 11, 0);
+}
+.aside .menu #register {
+  bottom: 7%;
+  font-size: 0.75rem;
 }
 .aside .menu li p {
   font-weight: 300;
@@ -118,6 +122,7 @@ a p {
   margin-bottom: 0.5rem;
   border-radius: 20px;
   width: 150px;
+  padding: 0.15rem 0.25rem !important;
 }
 .aside .menu .direcciones-usuario {
   margin-top: 2.5vh;
@@ -163,7 +168,6 @@ a p {
   width: 80vw;
   padding: 0rem 3vw;
   grid-area: main;
-  width: 80vw;
 }
 
 button {
@@ -215,6 +219,24 @@ table tr:nth-child(2n-1) {
   background-color: #f0f0f0;
 }
 
+.fullscreen {
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.774);
+  z-index: 18;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.fullscreen .contact-form-response {
+  margin-bottom: -0.5rem;
+}
+
 .table-clientes p {
   padding: 0.25rem 0;
 }
@@ -244,7 +266,7 @@ select {
 
 @keyframes changing {
   to {
-    left: 20vw;
+    left: 0vw;
   }
 }
 .box-change-page.next {
@@ -253,19 +275,10 @@ select {
 
 @keyframes nextpage {
   from {
-    left: 20vw;
+    left: 0vw;
   }
   to {
     left: 100vw;
-  }
-}
-.box-change-page.previous {
-  animation: prevpage 1s forwards;
-}
-
-@keyframes prevpage {
-  to {
-    left: -100vw;
   }
 }
 @media (max-width: 768px) {
@@ -277,6 +290,9 @@ select {
   }
   .aside #expand-arrow {
     display: block;
+  }
+  .main {
+    width: 100%;
   }
 }
 @media (min-width: 768px) {

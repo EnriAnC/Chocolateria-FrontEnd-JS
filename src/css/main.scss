@@ -1,5 +1,4 @@
 .main{ 
-    width: 80vw;
     .carrito{
         cursor: pointer;
         position: fixed;
@@ -83,8 +82,9 @@
             right: 0;
             left: 0%;
             position: absolute;
-            background-color: rgba(255, 255, 255, 0.659);
+            background-color: rgba(255, 255, 255, 0.881);
             box-shadow: 0px -1px 10px 1px rgba(0, 0, 0, 0.483);
+            filter: blur(50%);
             // clip-path: polygon(0 0, 100% 0, 80% 100%, 20% 100%); 
             // filter: blur(10px);
             // min-width: 50rem;
@@ -236,7 +236,7 @@
 @media (max-width: 768px) {
 
     .main{
-        width: 100%;        
+           
         h1{
             font-size: 2rem;
         }

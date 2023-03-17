@@ -5,20 +5,33 @@ const NAME = 'localhost',
     DOMAIN = `http://${NAME}:${PORT}`,
     SITE = `${DOMAIN}`,
     API = `${SITE}/api`,
-    PRODUCTS = `${API}/productos`,
-    PRODUCT = `${API}/productos/producto`,
-    PRODUCTBYORDER = `${API}/productos/orden`,
-    CLIENTS = `${API}/clientes`,
-    CLIENTBYRUT = `${API}/clientes/rut`,
-    ORDERS = `${API}/ordenes`,
-    ORDERSBYRUT = `${API}/ordenes/rut`,
-    ADDRRESSBYRUT = `${API}/direcciones/rut`,
-    DISPATCHBYORDER = `${API}/despachos/orden`,
-    SENDORDER = `${API}/compra/orden`,
-    ADDPRODUCT = `${API}/producto`,
+
+    PRODUCTS = `${API}/products`,
+    PRODUCT = `${API}/products/product`,
+    ADDPRODUCT = `${API}/product`,
+    PRODUCTBYORDER = `${API}/products/order`,
+
+    CLIENT = `${API}/client`,
+    CLIENTS = `${API}/clients`,
+    CLIENTBYRUT = `${API}/client/rut`,
+    ALLORDERSBYRUT = `${API}/client/orders`,
+
+    ORDER = `${API}/order`,
+    ORDERS = `${API}/orders`,
+    ORDERSBYRUT = `${API}/orders/rut`,
+
+    ADDRRESSBYRUT = `${API}/address/rut`,
+
+    DISPATCHBYORDER = `${API}/dispatch/order`,
+
+    SENDORDER = `${API}/send/order`,
+    
+    USER = `${API}/user`,
+
     LOGIN = `${SITE}/login`,
-    CLIENT = `${API}/usuario/cliente`,
-    USER = `${API}/usuario`
+    REGISTER = `${SITE}/register`;
+    
+    
     
 export default { DOMAIN, 
     SITE,
@@ -28,6 +41,7 @@ export default { DOMAIN,
     PRODUCTBYORDER,
     CLIENTS, 
     CLIENTBYRUT, 
+    ORDER,
     ORDERS, 
     ORDERSBYRUT, 
     ADDRRESSBYRUT, 
@@ -35,6 +49,8 @@ export default { DOMAIN,
     SENDORDER,
     LOGIN,
     CLIENT,
+    ALLORDERSBYRUT,
     USER,
-    ADDPRODUCT
+    ADDPRODUCT,
+    REGISTER
 }
