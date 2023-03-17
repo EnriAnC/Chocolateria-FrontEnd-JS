@@ -1,8 +1,5 @@
-// const NAME = 'chocolateria-backend-node-production.up.railway.app',
-//     DOMAIN = `https://${NAME}`,
-const NAME = 'localhost',
-    PORT = 3000,
-    DOMAIN = `http://${NAME}:${PORT}`,
+const NAME = 'chocolateria-backend-node-production.up.railway.app',
+    DOMAIN = `https://${NAME}`,
     SITE = `${DOMAIN}`,
     API = `${SITE}/api`,
 
@@ -51,6 +48,11 @@ export default { DOMAIN,
     CLIENT,
     ALLORDERSBYRUT,
     USER,
+<<<<<<< HEAD
     ADDPRODUCT,
     REGISTER
 }
+=======
+    ADDPRODUCT
+}
+>>>>>>> 78ae454d0cb4904289d0b949c8e80c1b2116e866
