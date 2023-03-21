@@ -50,5 +50,6 @@ export default { DOMAIN,
     USER,
     ADDPRODUCT,
     REGISTER,
-    ADDPRODUCT
+    ADDPRODUCT,
+    REGISTER
 }
