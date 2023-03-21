@@ -1,4 +1,4 @@
-const NAME = 'chocolateria-backend-node-production.up.railway.app',
+const NAME = 'dead-gold-squid-boot.cyclic.app',
     DOMAIN = `https://${NAME}`,
     SITE = `${DOMAIN}`,
     API = `${SITE}/api`,
@@ -48,11 +48,7 @@ export default { DOMAIN,
     CLIENT,
     ALLORDERSBYRUT,
     USER,
-<<<<<<< HEAD
     ADDPRODUCT,
-    REGISTER
-}
-=======
+    REGISTER,
     ADDPRODUCT
 }
->>>>>>> 78ae454d0cb4904289d0b949c8e80c1b2116e866

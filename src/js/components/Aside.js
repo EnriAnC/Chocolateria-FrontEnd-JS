@@ -1,4 +1,3 @@
-import Usuario from "../assets/Usuario.js";
 import { ajax } from "../helpers/ajax.js";
 import my_api from "../helpers/my_api.js";
 import { thisSesion, usuario } from "../index.js";
@@ -33,7 +32,32 @@ async function Aside(){
             if (this.thisSesion){
                 drawDirecciones(await usuario.direcciones)
             }
-        
+        },
+        activateSlideAside(){
+            const $arrow = d.getElementById('expand-arrow')
+            const $aside = d.getElementsByClassName('aside')[0]
+            const rightTranslate = [
+                { left: "-170px" },
+                { left: "0px" },
+            ];
+            
+            const translateTiming = {
+                duration: 250,
+                fill: "forwards"
+            }
+            $arrow.addEventListener('click', function(e){
+                
+                if (!activeAside){
+                    $aside.animate(rightTranslate, translateTiming)
+                    $arrow.firstElementChild.animate([{transform: "rotateY(180deg)", paddingLeft: "5px"}], {duration: 500, fill:"forwards"})
+                    activeAside = true
+                } else {
+                    $aside.animate(rightTranslate, {...translateTiming, direction:"reverse"})
+                    $arrow.firstElementChild.animate([{transform: "rotateY(0deg)", paddingLeft: "15px"}], {duration: 500, fill:"forwards"})
+                    activeAside = false
+                }
+                
+            })    
         }
     }
 }
@@ -144,34 +168,6 @@ function cerrarSesion(e){
 
 
 // ----------ANIMATION ASIDE----------
-function expandAsideAnimation(){
-    const $arrow = d.getElementById('expand-arrow')
-    const $aside = d.getElementsByClassName('aside')[0]
-    const rightTranslate = [
-        { left: "-170px" },
-        { left: "0px" },
-    ];
-    
-    const translateTiming = {
-        duration: 250,
-        fill: "forwards"
-    }
-    $arrow.addEventListener('click', function(e){
-        
-        if (!activeAside){
-            $aside.animate(rightTranslate, translateTiming)
-            $arrow.firstElementChild.animate([{transform: "rotateY(180deg)", paddingLeft: "5px"}], {duration: 500, fill:"forwards"})
-            activeAside = true
-        } else {
-            $aside.animate(rightTranslate, {...translateTiming, direction:"reverse"})
-            $arrow.firstElementChild.animate([{transform: "rotateY(0deg)", paddingLeft: "15px"}], {duration: 500, fill:"forwards"})
-            activeAside = false
-        }
-        
-    })    
-}
-
-
 
 
 function cambiarDireccion(e){

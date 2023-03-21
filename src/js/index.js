@@ -23,6 +23,7 @@ d.addEventListener('DOMContentLoaded', async e=>{
     await routes.init()
     const aside = await Aside()
     aside.showElements()
+    aside.activateSlideAside()
 })
 
 d.addEventListener('click', async e=>{
