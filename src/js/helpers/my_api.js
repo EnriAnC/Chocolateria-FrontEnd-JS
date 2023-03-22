@@ -49,7 +49,5 @@ export default { DOMAIN,
     ALLORDERSBYRUT,
     USER,
     ADDPRODUCT,
-    REGISTER,
-    ADDPRODUCT,
     REGISTER
 }
