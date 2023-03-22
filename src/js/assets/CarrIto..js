@@ -91,7 +91,10 @@ function realizarCompra(){
             if (thisSesion){
                 let json = await ajax({url:my_api.SENDORDER, options:{
                     method: 'POST',
-                    headers: {"Content-Type":"application/json"},
+                    headers:{
+                        "Content-Type":"application/json",
+                        "authorization": `Bearer ${thisSesion}`
+                    },
                     body: JSON.stringify({
                         rut: usuario.rut,
                         id_direccion: usuario.direccionElegida.id_direccion,
